@@ -84,5 +84,5 @@ homeassistant_config:
 
 .PHONY: hass
 hass: homeassistant_config
-	bin/hass -c homeassistant_config
+	${BIN}/hass -c homeassistant_config
 

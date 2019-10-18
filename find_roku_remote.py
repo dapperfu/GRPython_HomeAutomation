@@ -1,10 +1,7 @@
 #!virtual_env/bin/python
-
 import roku
 import time
-
 print("🚦", end="")
-
 cfg = {
     "host": "192.168.1.128",
     "port": 8060,
