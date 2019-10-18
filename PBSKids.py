@@ -1,7 +1,10 @@
+#!virtual_env/bin/python
 # -*- coding: utf-8 -*-
 
-channel_map = {"live": [0, 1], "odd_squad": [0, 0], "daniel_tiger": [1, 1], "wild_kratts": [1, 0]}
+import roku
+import time
 
+channel_map = {"live": [0, 1], "odd_squad": [0, 0], "daniel_tiger": [1, 1], "wild_kratts": [1, 0]}
 
 class PBSKids(roku.Roku):
     def __init__(self, **kwargs):
@@ -66,3 +69,35 @@ class PBSKids(roku.Roku):
         for _ in range(times):
             self.roku.select()
             self.sleep(2)
+
+if __name__ == "__main__":
+    
+    import sys
+    print(sys.argv)
+    
+    
+    channel_map = {
+        "live": [0, 1],
+        "odd_squad": [0,0],
+        "daniel_tiger": [1, 1],
+        "wild_kratts": [1, 0],
+    }
+    
+    show = sys.argv[1]
+    
+    if not show in channel_map.keys():
+        print(channel_map.keys())
+        sys.exit()
+        
+    
+    if not len(sys.argv)==2:
+        print(channel_map.keys())
+        sys.exit()
+    cfg = {
+        "host": "192.168.1.128",
+        "port": 8060,
+        "timeout": 10, # E   
+        }    
+    p = PBSKids(**cfg)
+    p.play_show(sys.argv[1])
+    sys.exit()
