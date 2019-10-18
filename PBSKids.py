@@ -73,10 +73,8 @@ class PBSKids(roku.Roku):
             self.sleep(2)
 
 if __name__ == "__main__":
-    
     import sys
     print(sys.argv)
-    
     
     channel_map = {
         "live": [0, 1],
@@ -84,6 +82,9 @@ if __name__ == "__main__":
         "daniel_tiger": [1, 1],
         "wild_kratts": [1, 0],
     }
+    if len(sys.argv)<2:
+        print(channel_map.keys())
+        sys.exit()
     
     show = sys.argv[1]
     
@@ -91,10 +92,7 @@ if __name__ == "__main__":
         print(channel_map.keys())
         sys.exit()
         
-    
-    if not len(sys.argv)==2:
-        print(channel_map.keys())
-        sys.exit()
+
     cfg = {
         "host": "192.168.1.128",
         "port": 8060,
