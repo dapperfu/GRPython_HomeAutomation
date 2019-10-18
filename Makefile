@@ -15,10 +15,33 @@ clean:
 .PHONY: venv
 venv: ${PYTHON}
 
+
+.PHONY: test
+test:
+	${BIN}/pytest
+
+
+
+
 .PHONY: logger
 logger: bin/python
 	bin/flask run --host=0.0.0.0
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Hardware.
 uPyLoader-linux:
 	curl -L -o ${@} https://github.com/BetaRavener/uPyLoader/releases/download/v0.1.4/uPyLoader-linux
 	chmod +x ${@}
