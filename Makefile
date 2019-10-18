@@ -4,6 +4,7 @@ PYTHON=${BIN}/python3
 PIP=${BIN}/pip
 
 ${PYTHON}:
+	git submodule update --init
 	python3 -mvenv ${VENV}
 	${PIP} install --upgrade wheel setuptools pip
 	${PIP} install -r requirements.txt

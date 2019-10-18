@@ -4,15 +4,15 @@ notebook
 #homeassistant
 #esphome
 
-python-cec
+cec
 
 # Media Players
 roku
 pychromecast
-pytest-html
-pytest-sugar
-pytest-md
-pytest-emoji
+#pytest-html
+#pytest-sugar
+#pytest-md
+#pytest-emoji
 
 autopep8
 black
