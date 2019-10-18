@@ -10,7 +10,8 @@ cfg = {
     "port": 8060,
     "timeout": 10, # E   
 }
-r = roku.Roku(**cfg)
+# Autofind roku.
+r = next(r for r in roku.Roku.discover() if r.port == 8060)
 print(".", end="")
 r.find_remote()
 print(". Go")
