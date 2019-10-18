@@ -1,8 +1,10 @@
 jupyter
 notebook
 
-homeassistant
-esphome
+#homeassistant
+#esphome
+
+python-cec
 
 # Media Players
 roku
@@ -15,6 +17,5 @@ pytest-emoji
 autopep8
 black
 isort
-
 
 -e python-tivo
