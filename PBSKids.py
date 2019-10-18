@@ -92,7 +92,7 @@ if __name__ == "__main__":
         sys.exit()
         
     
-    if not len(sys.argv)==2:
+    if len(sys.argv)<2:
         print(channel_map.keys())
         sys.exit()
     cfg = {
