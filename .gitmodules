@@ -1,0 +1,3 @@
+[submodule "python-tivo"]
+	path = python-tivo
+	url = git@github.com:jed-frey/python-tivo.git

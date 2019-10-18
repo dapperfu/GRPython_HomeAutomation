@@ -1,0 +1,11 @@
+jupyter
+notebook
+
+homeassistant
+esphome
+
+# Media Players
+roku
+pychromecast
+
+-e python-tivo
