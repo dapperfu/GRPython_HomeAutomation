@@ -1,20 +1,21 @@
 jupyter
 notebook
 
-homeassistant
-esphome
+#homeassistant
+#esphome
+
+cec
 
 # Media Players
 roku
 pychromecast
-pytest-html
-pytest-sugar
-pytest-md
-pytest-emoji
+#pytest-html
+#pytest-sugar
+#pytest-md
+#pytest-emoji
 
 autopep8
 black
 isort
-
 
 -e python-tivo

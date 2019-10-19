@@ -87,11 +87,10 @@ if __name__ == "__main__":
         sys.exit()
     
     show = sys.argv[1]
-    
+
     if not show in channel_map.keys():
         print(channel_map.keys())
         sys.exit()
-        
 
     cfg = {
         "host": "192.168.1.128",
