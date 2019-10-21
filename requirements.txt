@@ -2,7 +2,7 @@ jupyter
 notebook
 
 #homeassistant
-#esphome
+git+https://github.com/esphome/esphome.git
 
 cec
 
