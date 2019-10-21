@@ -19,3 +19,5 @@ black
 isort
 
 -e python-tivo
+
+platformio

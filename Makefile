@@ -22,14 +22,9 @@ test:
 	${BIN}/pytest
 
 
-
-
-.PHONY: logger
-logger: bin/python
-	bin/flask run --host=0.0.0.0
-
-
-
+.PHONY: jupyter
+jupyter:
+	${BIN}/jupyter-notebook
 
 
 
@@ -58,21 +53,21 @@ webrepl/webrepl.html:
 webrepl: webrepl/webrepl.html
 	firefox ${^}
 
-ESP8266_BIN:=esp8266-20190529-v1.11.bin
+ESP32_BIN:=esp32-20191011-v1.11-422-g98c2eabaf.bin
 .PHONY: micropython
-micropython: esp8266-20190529-v1.11.bin
-esp8266-20190529-v1.11.bin:
+micropython: ${ESP32_BIN}
+${ESP32_BIN}:
 	wget http://micropython.org/resources/firmware/${ESP8266_BIN}
 
 # You have to set it,
 PORT:=/dev/ttyUSB9
 .PHONY: flash
 flash: micropython
-	bin/esptool.py --before default_reset --after hard_reset --baud 115200 --chip esp8266 --port ${PORT} write_flash --flash_mode=dout --flash_size=detect --verify 0x0 ${BIN}
+	${BIN}/esptool.py --before default_reset --after hard_reset --baud 115200 --chip esp32 --port ${PORT} write_flash --flash_mode=dout --flash_size=detect --verify 0x0 ${ESP32_BIN}
 
 .PHONY: sonoff_flash
 sonoff_flash: micropython
-	bin/esptool.py --port ${PORT} write_flash -fs 1MB -fm dout 0x0 ${BIN}
+	bin/esptool.py --port ${PORT} write_flash -fs 1MB -fm dout 0x0 ${ESP32_BIN}
 
 
 .PHONY: erase

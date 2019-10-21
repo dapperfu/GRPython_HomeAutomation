@@ -1,0 +1,10 @@
+api:
+  reboot_timeout:
+    hours: 24
+
+ota:
+
+web_server:
+  port: 80
+  
+<<: !include wifi.yaml

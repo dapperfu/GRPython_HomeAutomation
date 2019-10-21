@@ -1,0 +1,5 @@
+substitutions:
+  device_name: feit_monochromatic
+  friendly_name: Monochromatic
+
+<<: !include include/feit_a19_monochromatic.yaml
